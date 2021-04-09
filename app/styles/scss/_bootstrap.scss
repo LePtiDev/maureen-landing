@@ -1,0 +1,33 @@
+/////////////////////////
+// BOOTSTRAP
+/////////////////////////
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+/* set the overriding variables */
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1500px
+);
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1500px
+);
+
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/print";
+
+
+

@@ -1,0 +1,177 @@
+html {
+    box-sizing: border-box;
+}
+*{ box-sizing: border-box}
+html,
+body {
+    font-family: $fontPrimary;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+
+
+/*
+    background
+*/
+.blue-circle{
+    z-index: 2;
+    position: absolute;
+    right: 50px;
+    height: 500px;
+    width: 500px;
+    background-color: #5A80E2;
+    border-radius: 250px;
+    filter: blur(200px);
+    opacity: 0.5;
+    top: 20vh;
+}
+
+.blue-red{
+    z-index: 1;
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    left: 50px;
+    background-color: #E67A6D;
+    border-radius: 250px;
+    opacity: 0.5;
+    filter: blur(200px);
+}
+
+.blue-green{
+    z-index: 1;
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    top: 200px;
+    left: 20vw;
+    background-color: #00D5A3;
+    border-radius: 250px;
+    opacity: 0.5;
+    filter: blur(200px);
+}
+
+.background{
+    z-index: 10;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.2;
+    backdrop-filter: blur(50px);
+
+}
+
+.container-all{
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 0 40px 40px 40px;
+    overflow-y: scroll;
+    nav{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        a{
+            font-family: "GT America Bold";
+            color: $primaryColor;
+            &:hover{
+                text-decoration: none;
+                transform: translateY(10px);
+            }
+        }
+
+        .logo{
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            path{
+                stroke: $primaryColor;
+            }
+        }
+
+        .switch-mode{
+            height: 24px;
+            width: 24px;
+            transform: rotate(180deg);
+            cursor: pointer;
+
+            g:last-child{
+                fill: $primaryColor;
+            }
+        }
+    }
+
+    section{
+        width: 100%;
+        border: solid $primaryColor 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        p{
+            font-family: $font-2-light;
+            color: $primaryColor;
+            font-size: 85px;
+            padding-top: 150px;
+            width: 100%;
+            text-align: center;
+            line-height: 100px;
+            z-index: 20;
+            .word-hover{
+                position: relative;
+                font-family: $font-2-italic;
+                z-index: 20;
+                &:before{
+                    content: "";
+                    z-index: 1000;
+                    position: absolute;
+                    background: white;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    filter: blur(50px);
+                    transition: 300ms;
+                }
+                &:hover{
+                    cursor: pointer;
+                    &:before{
+                        transition: 300ms;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        // Arrow
+
+        .circle-arrow{
+            height: 150px;
+            width: 150px;
+            border: dashed 2px $primaryColor;
+            border-radius: 100px;
+            margin: 100px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg{
+                transform: rotate(-90deg);
+                height: 126px;
+                width: 104px;
+                text{
+                    fill: $primaryColor;
+                    stroke: $primaryColor;
+                }
+            }
+        }
+
+    }
+}

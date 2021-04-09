@@ -1,0 +1,26 @@
+@media all and (-ms-high-contrast:none)
+{
+    .sub-accroche span, .accroche strong {
+        background-image: none !important;
+        color: $darkGray1 !important;
+    } /* IE10 */
+    *::-ms-backdrop, .sub-accroche span, .accroche strong {
+        background-image: none !important;
+        color: $darkGray1 !important;
+    } /* IE11 */
+
+    .aeration-concave:after {
+        display: none !important;
+    } /* IE10 */
+    *::-ms-backdrop, .aeration-concave:after {
+        display: none !important;
+    } /* IE11 */
+
+    .table .arrow {
+        top: 20px !important;
+    } /* IE10 */
+    *::-ms-backdrop, .table .arrow {
+        top: 20px !important;
+    } /* IE11 */
+
+}

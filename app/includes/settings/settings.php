@@ -2,32 +2,71 @@
 $settings = array();
 
 // DOMAINES REFERENCE
-$settings['domains']['preproduction'] = 'dev.mustii.fr';
-$settings['domains']['production'] = '';
+$settings['domains']['preproduction'] = 'dev.adn-realty.com';
+$settings['domains']['production'] = ''; // Domaine final - Si landing Adscore : acheter-neuf.immo
 
+
+// DONNEES LIEES AU PROGRAMME
+$settings['residenceInfos'] = array();
+$settings['residenceInfos']['name'] = "NOM_RESIDENCE";
+$settings['residenceInfos']['city'] = "VILLE_RESIDENCE";
+$settings['residenceInfos']['dpt'] = "00";
+$settings['residenceInfos']['brochureFilename'] = $settings['residenceInfos']['city'] . "-" . $settings['residenceInfos']['name'] . ".pdf"; // Ex : Noisy-Tendance.pdf
+$settings['residenceInfos']['brochureURL'] = "pdf/" . $settings['residenceInfos']['brochureFilename'];
 
 
 // TEXTES REDONDANTS
 $settings['texts'] = array();
 $settings['texts']['tel'] = "00&nbsp;00&nbsp;00&nbsp;00&nbsp;00";
 $settings['texts']['telLink'] = "0000000000";
+$settings['texts']['maquette3d'] = "https://services.vor-immobilier.fr/RivageImmobilier/HautsDeTanchet/op/101/floor/0"; ///Mettre l'url de la maquette 3D, ne rien mettre pour enlever le bloc
+
 
 // META DATA
 $settings['meta'] = array();
-$settings['meta']['title'] = ""; // A optimiser pour le référencement - 55 caractères maximum
-$settings['meta']['description'] = ""; // A optimiser pour le référencement - 155 caractères maximum
-$settings['meta']['site_name'] = ""; // Nom du site
+$settings['meta']['title'] = "Appartements neufs à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ") pour habiter ou investir"; // A optimiser pour le référencement - 55 caractères maximum
+$settings['meta']['description'] = "Du studio au 5 pièces, votre futur appartement neuf à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ") - Contactez-nous pour en savoir plus"; // A optimiser pour le référencement - 155 caractères maximum
+$settings['meta']['site_name'] = $settings['residenceInfos']['name'] . " - " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ")";
 $settings['meta']['image'] = "images/share.jpg"; // A créer
 
-// E-MAILS POUR LE CLIENT
-$settings['email-client']['subject'] = ""; // Objet de l'e-mail
-$settings['email-client']['from'] = ""; // Adresse e-mail expéditeur
-$settings['email-client']['fromName'] = ""; // Nom de l'expéditeur
 
-// E-MAILS POUR LE VISTEUR
-$settings['email']['subject'] = ""; // Objet de l'e-mail
-$settings['email']['from'] = ""; // Adresse e-mail expéditeur
+
+// E-MAILS
+$settings['email']['libelleProgramme'] = $settings['residenceInfos']['name'] . " à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ")";
+$settings['email']['primaryColor'] = "#304bd8"; // Code couleur principal, utilisé pour l'e-mailing transactionnel
+$settings['email']['subject'] = $settings['residenceInfos']['name'] . " à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ")"; // Objet de l'e-mail
+$settings['email']['from'] = 'nepasrepondre@acheter-neuf.immo'; // Adresse e-mail expéditeur
 $settings['email']['fromName'] = "NOM_EXPEDITEUR"; // Nom complet du promoteur (exemple : Beryl Investissement)
+
+// LEGAL INFOS
+$settings['legalInfos'] = array();
+$settings['legalInfos']['promoteur'] = "NOM_PROMOTEUR";
+$settings['legalInfos']['status'] = "STATUT_PROPRIETAIRE"; // Ex: Société, Particulier, Association...
+$settings['legalInfos']['company'] = "NOM_SOCIETE";
+$settings['legalInfos']['address'] = "ADRESSE";
+$settings['legalInfos']['tel'] = "TELEPHONE";
+$settings['legalInfos']['capital'] = "CAPITAL"; // Ex : 3 000 €
+$settings['legalInfos']['siret'] = "SIRET";
+$settings['legalInfos']['rcs'] = "RCS";
+$settings['legalInfos']['tva'] = "NUM_TVA";
+$settings['legalInfos']['agency'] = "ADN Realty";
+$settings['legalInfos']['publication'] = "RESPONSABLE_PUBLICATION";
+$settings['legalInfos']['host'] = "Amazon Web Services (31 Place des Corolles, 92400 Courbevoie)";
+$settings['legalInfos']['site_name'] = $settings['meta']['site_name'];
+
+$settings['legalInfos']['email'] = array();
+$settings['legalInfos']['email']['webmaster'] = "EMAIL_WEBMASTER";
+$settings['legalInfos']['email']['publicationManager'] = "EMAIL_RESPONSABLE_PUBLICATION";
+
+// DONNEES TECHNIQUES
+define('TABLE_PREFIX', 'client_ville_residence_'); // à définir de la forme {client}_{ville}_{residence}_ >> {client} = promoteur ou commercialisateur
+// Prioriser le promoteur lorsque le commercialisateur travaille avec plusieurs promoteurs différents (Exemple : Pour CGV Beryl, mettre beryl_ville_residence_)
+// PENSER A METTRE A JOUR LE FICHIER TABLES.SQL EN CONSEQUENCE !!!
+
+define('NOM_PROGRAMME', $settings['residenceInfos']['name']);
+define('VILLE_PROGRAMME', $settings['residenceInfos']['city']);
+
+
 
 // CODE GTM
 $settings['GTM']['head'] = <<<EOD

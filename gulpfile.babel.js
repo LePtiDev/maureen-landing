@@ -13,8 +13,8 @@ import cleanCSS from 'gulp-clean-css';
 import imagemin from 'gulp-imagemin';
 import os from 'os';
 
-// Adress local 'nom du dossier + app'
-let baseDirRepository = "/maureen/app/";
+// A mettre à jour
+let baseDirRepository = "/maureen-landing/app/";
 
 
 var routing;
@@ -33,6 +33,12 @@ const paths = {
     },
     styles: {
         src: [
+            'node_modules/normalize.css/normalize.css',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
+            'node_modules/swiper/swiper-bundle.min.css',
+            'node_modules/@cmyee/pushy/css/pushy.css',
+            'node_modules/jquery-nice-select/css/nice-select.css',
+            'node_modules/jarallax/dist/jarallax.css',
             'node_modules/aos/dist/aos.css',
         ],
         dev: 'app/styles/',
@@ -41,10 +47,17 @@ const paths = {
     scripts: {
         src: [
             'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/jquery-validation/dist/jquery.validate.min.js',
+            'node_modules/jquery-validation/dist/additional-methods.min.js',
+            'node_modules/swiper/swiper-bundle.min.js',
+            'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
+            'node_modules/@cmyee/pushy/js/pushy.min.js',
+            'node_modules/jquery-nice-select/js/jquery.nice-select.min.js',
+            'node_modules/jarallax/dist/jarallax.min.js',
+            'node_modules/jarallax/dist/jarallax-element.min.js',
             'node_modules/aos/dist/aos.js',
             'node_modules/jquery-lazy/jquery.lazy.min.js',
-            'app/scripts/src/elements/*',
-            'app/scripts/src/general/*'
+            'app/scripts/src/main.js'
         ],
         dev: 'app/scripts/',
         build: 'dist/scripts/'
