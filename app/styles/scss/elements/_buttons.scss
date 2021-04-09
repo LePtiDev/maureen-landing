@@ -1,0 +1,1058 @@
+/////////////////////////
+// BUTTONS
+/////////////////////////
+.btn {
+    position: relative;
+
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 30px;
+    height: 50px;
+    border-radius: $border-radius-small;
+
+    border: 2px solid $darkPrimaryColor;
+    background-color: $darkPrimaryColor;
+
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    font-size: rem(15px);
+    line-height: rem(15px);
+
+    transition: color 150ms linear, background-color 150ms linear;
+    &:hover {
+        background-color: white;
+        color: $darkPrimaryColor;
+        transition: color 150ms linear, background-color 150ms linear;
+    }
+    span {
+        display: block;
+        font-size: rem(10px);
+        font-weight: 400;
+    }
+
+
+    /* BOUTONS DÉGRADÉS */
+    &.gradient {
+        border: none;
+        background: linear-gradient(to left, $primaryColor, $darkPrimaryColor, $primaryColor);
+        background-size: 200% 200%;
+        background-position: right;
+        &:hover {
+            color: white;
+        }
+    }
+
+    /* BOUTONS BLANC */
+    &.white {
+        background-color: white;
+        border: 2px solid white;
+        color: $darkPrimaryColor;
+        transition: color 150ms linear, background-color 150ms linear;
+        &:hover {
+            background-color: transparent;
+            color: white;
+            transition: color 150ms linear, background-color 150ms linear;
+        }
+        svg {
+            fill: $darkPrimaryColor;
+            path {
+                fill: $darkPrimaryColor;
+            }
+        }
+    }
+
+    /* BOUTONS LARGE */
+    &.btn-large {
+        height: 60px;
+        padding: 0 35px;
+        font-size: rem(16px);
+        &.text-expand {
+            padding: 0;
+            width: 300px;
+            text-align: center;
+            &:hover {
+                letter-spacing: 1.5px;
+            }
+        }
+        @include media-breakpoint-down(xs) {
+            padding: 0 20px;
+        }
+    }
+
+    /* BOUTONS AVEC ICÔNE */
+    &.btn-icon {
+        padding: 14px 20px;
+        &:hover {
+            svg {
+                path {
+                    fill: $darkPrimaryColor;
+                    transition: fill 150ms linear;
+                }
+            }
+        }
+        &.gradient {
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+        &.btn-border {
+            svg {
+                path {
+                    fill: $darkPrimaryColor;
+                    transition: fill 150ms linear;
+                }
+            }
+        }
+        &.white {
+            &:hover {
+                svg path {
+                    fill: white;
+                }
+            }
+        }
+        svg {
+            margin-right: 5px;
+            width: 21px;
+            height: 21px;
+            path {
+                transition: fill 150ms linear;
+            }
+        }
+    }
+
+    /* BOUTONS AVEC BORDURE */
+    &.btn-border {
+        border: 2px solid $darkPrimaryColor;
+        background-color: transparent;
+        color: $darkPrimaryColor;
+        background-image: none;
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+        &.gradient {
+            padding: 0;
+            background-color: white;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            &:hover {
+                &:before {
+                    opacity: 0;
+                }
+            }
+            &:before {
+                z-index: 1;
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                border-radius: 3px;
+                transition: all 150ms linear;
+            }
+            div {
+                z-index: 1;
+
+                display: flex;
+                align-items: center;
+
+                padding: 0 20px;
+                width: 100%;
+                height: 47px;
+                border-radius: $border-radius-small;
+            }
+            &::after {
+                position: absolute;
+                top: -2px; bottom: -2px;
+                left: -2px; right: -2px;
+                background: linear-gradient(to left, $primaryColor, $darkPrimaryColor);
+                content: '';
+                z-index: 0;
+                border-radius: $border-radius-small;
+            }
+        }
+        &.white {
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            div {
+                background-color: transparent;
+            }
+            &:after, &:before {
+                display: none;
+            }
+            svg path {
+                fill: white;
+            }
+            &:hover {
+                background-image: none;
+                background-color: white;
+                color: $darkPrimaryColor;
+                border-radius: $border-radius-small;
+            }
+        }
+    }
+
+    /* BOUTONS AVEC FLÈCHE */
+    &.btn-arrow {
+        padding-right: 55px;
+        svg {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 23px;
+            width: 17px;
+            height: 10px;
+            transition: right 150ms linear;
+        }
+        &.white {
+            svg {
+                polyline, line {
+                    stroke: $darkPrimaryColor;
+                }
+            }
+            &:hover {
+                background-color: white;
+                color: $darkPrimaryColor;
+            }
+        }
+        &.btn-border {
+            padding: 0 30px;
+            padding-right: 55px;
+            svg {
+                polyline, line {
+                    stroke: $darkPrimaryColor;
+                    transition: stroke 150ms linear;
+                }
+            }
+            &:hover {
+                svg {
+                    polyline, line {
+                        stroke: white;
+                        transition: stroke 150ms linear;
+                    }
+                }
+            }
+            &.gradient {
+                div {
+                    padding: 0;
+                }
+            }
+        }
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            svg {
+                right: 18px;
+                transition: right 150ms linear;
+            }
+        }
+    }
+
+    /* BOUTONS SLIDE-GRADIENT */
+    &.slide-gradient {
+        @include transition(0.6s);
+        &:hover {
+            background-position: left !important;
+            transition: 0.6s;
+        }
+    }
+
+    /* BOUTONS SLIDE DOUBLE */
+    &.slide-double {
+        div {
+            &:before {
+                display: block;
+                position: absolute;
+                z-index: -1;
+                content: '';
+                background-color: $darkPrimaryColor;
+            }
+        }
+        &.gradient {
+            div:before {
+                background-color: transparent;
+                background: linear-gradient(to left, $primaryColor, $darkPrimaryColor, $primaryColor);
+                background-size: 200% 200%;
+                background-position: right;
+            }
+        }
+        &:hover {
+            background-color: transparent;
+            background-image: none;
+            &:before {
+                opacity: 1 !important;
+            }
+        }
+        &.slide-bottom-double {
+            &:hover div:before {
+                bottom: 0;
+                top: auto;
+                height: 100%;
+            }
+            div {
+                &:before {
+                    left: 0;
+                    top: 0;
+                    height: 0;
+                    width: 100%;
+                    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+                }
+            }
+        }
+        &.slide-top-double {
+            &:hover div:before {
+                top: 0;
+                bottom: auto;
+                height: 100%;
+            }
+            div:before {
+                left: 0;
+                bottom: 0;
+                height: 0;
+                width: 100%;
+                transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            }
+        }
+        &.slide-left-double {
+            &:hover div:before {
+                left: 0;
+                right: auto;
+                width: 100%;
+            }
+            div:before {
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 0;
+                transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            }
+        }
+        &.slide-right-double {
+            &:hover div:before {
+                right: 0;
+                left: auto;
+                width: 100%;
+            }
+            div:before {
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
+                transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            }
+        }
+    }
+
+    /* BOUTONS BRILLANT */
+    &.btn-shiny{
+        border: none;
+        overflow: hidden;
+        transition: all ease .3s;
+        &:before{
+            content: "";
+            width: 33px;
+            position: absolute;
+            transform: rotate(130deg);
+            height: 160px;
+            background-color: white;
+            opacity: 0.6;
+            left: -400px;
+            top:-50px;
+            transition: all ease .4s;
+        }
+        &:hover{
+            background-color: $darkPrimaryColor;
+            color:white;
+            &:before{
+                left:155px
+            }
+        }
+    }
+
+    /* BOUTONS SLIDE BUBBLE */
+    &.slide-bubble {
+        transition: 0.5s;
+        &:before {
+            transition: 0.5s;
+        }
+        svg path {
+            fill: $darkPrimaryColor;
+            transition: 0.5s;
+        }
+        div {
+            position: relative;
+            overflow: hidden;
+            .bubble {
+                z-index: -1;
+                position: absolute;
+                width: 25%;
+                height: 100%;
+                background-color: $darkPrimaryColor;
+                transform: translateY(150%);
+                border-radius: 50%;
+                left: calc((var(--n) - 1) * 25%);
+                transition: 0.5s;
+                transition-delay: calc((var(--n) - 1) * 0.1s);
+                &:nth-child(1) {
+                    --n: 1;
+                }
+                &:nth-child(2) {
+                    --n: 2;
+                }
+                &:nth-child(3) {
+                    --n: 3;
+                }
+                &:nth-child(4) {
+                    --n: 4;
+                }
+                &:nth-child(5) { // Fix Safari
+                    --n: 1;
+                }
+            }
+        }
+        &.white {
+            background-color: transparent !important;
+            &:before {
+                display: none;
+            }
+            div span {
+                background-color: white;
+            }
+        }
+        &:hover {
+            &:before {
+                opacity: 1 !important;
+                border-radius: 7px;
+                transition: 0.5s;
+            }
+            color: white;
+            transition: 0.5s;
+            svg path {
+                fill: white;
+                transition: 0.5s;
+            }
+            .bubble {
+                transform: translateY(0) scale(2.5);
+            }
+            &.white {
+                color: $darkPrimaryColor;
+                border-radius: 8px;
+                transition: 0.5s;
+                svg path {
+                    fill: $darkPrimaryColor;
+                }
+            }
+        }
+    }
+
+    /* BOUTONS BUBBLE DOWN */
+    &.bubble-down {
+        position: relative;
+        z-index: 1;
+        transition-delay: 0.2s;
+        &:before {
+            border-radius: 8px !important;
+        }
+        div {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            transition: color 0.2s ease-in-out;
+            svg {
+                path {
+                    fill: white !important;
+                }
+            }
+            .bubble {
+                content: "";
+                display: block;
+                position: absolute;
+                z-index: -1;
+                transition: height 0.5s ease-in-out;
+                right: 0;
+                bottom: -3px;
+                left: -4px;
+                height: 300%;
+                width: 110%;
+                top: auto;
+                border-radius: 50% 50% 0 0/75% 75% 0 0;
+                background: linear-gradient(to left, $primaryColor, $darkPrimaryColor, $primaryColor);
+                background-size: 200%, 200%;
+                background-position: right;
+            }
+        }
+        &:hover {
+            div {
+                color: $darkPrimaryColor;
+                transition: color 0.2s ease-in-out;
+                svg {
+                    path {
+                        fill: $darkPrimaryColor !important;
+                    }
+                }
+            }
+            &:before {
+                opacity: 1 !important;
+                border-radius: 3px !important;
+            }
+            .bubble {
+                transition: height 0.5s ease-in-out;
+                height: 0;
+            }
+        }
+    }
+
+    /* BOUTONS BUBBLE UP */
+    &.bubble-up {
+        @extend .bubble-down;
+        &:before {
+            border-radius: 3px !important;
+        }
+        div {
+            color: $darkPrimaryColor;
+            .bubble {
+                height: 0;
+            }
+        }
+        &:hover {
+            &:before {
+                border-radius: 8px !important;
+            }
+            div {
+                color: white;
+            }
+            .bubble {
+                height: 300%;
+            }
+        }
+        &.white {
+            background-color: transparent !important;
+            border: 2px solid white;
+            &:before {
+                display: none;
+            }
+            div {
+                border-radius: 0;
+                color: white;
+                transition: color 0.5s ease-in-out;
+                .bubble {
+                    background-image: none;
+                    background-color: white;
+                }
+            }
+            &:hover {
+                div {
+                    color: $darkPrimaryColor;
+                    transition: color 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+
+    /* BOUTONS FILLING */
+    &.btn-filling {
+        overflow: hidden;
+        border: none;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            background: $primaryColor;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200%;
+            border-radius: var(--br, 40%);
+            transform: translateY(var(--y, 50%));
+            transition: transform var(--d, 0.4s) ease-in var(--d-d, 0s), border-radius 0.5s ease var(--br-d, 0.08s), top 0.5s linear var(--br-d, 0s), top 0.5s linear var(--br-d, 0s);
+        }
+        &:after {
+            background: $secondaryColor;
+            --d: .44s;
+        }
+        div {
+            z-index: 1;
+            position: relative;
+            display: flex;
+        }
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            &:after, &:before {
+                top: -10px;
+                --y: 0;
+                --br: 5%;
+            }
+            &:after {
+                --br: 10%;
+                --d-d: .02s;
+            }
+        }
+        &.white {
+            &:before {
+                background: $secondaryColor;
+            }
+            &:after {
+                background: $darkPrimaryColor;
+            }
+            &:hover {
+                background-color: white;
+                color: white;
+                transition: color 0.5s linear var(--br-d, 0s);
+            }
+        }
+    }
+
+    /* BOUTONS ANIMATED ARROW */
+    &.animated-arrow {
+        transition: .02s .2s cubic-bezier(.1, 0, .1, 1);
+        svg {
+            transition: right .3s cubic-bezier(.1, 0, .1, 1);
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 100%;
+            bottom: 0;
+            background: $darkPrimaryColor;
+            transition: .3s .2s cubic-bezier(.1, 0, .1, 1), left .3s cubic-bezier(.1, 0, .1, 1);
+            z-index: -1;
+        }
+        &:hover {
+            color: $darkPrimaryColor;
+            background-color: white;
+            &::before {
+                z-index: 0;
+                left: calc(100% - 3em);
+                right: 0;
+                transition: .3s cubic-bezier(.1, 0, .1, 1), left .3s .2s cubic-bezier(.1, 0, .1, 1);
+            }
+            svg {
+                right: 13px;
+                transition: right .3s cubic-bezier(.1, 0, .1, 1);
+                polyline, line {
+                    stroke: white;
+                }
+            }
+        }
+    }
+
+    /* BOUTONS TEXT SLIDE */
+    &.text-slide {
+        div {
+            transition: all .3s ease-in-out;
+        }
+        &:before {
+            content: attr(data-hover);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translate(-100%,-50%);
+            transition: all .3s ease-in-out;
+        }
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            &:before {
+                opacity: 1;
+                transform: translate(0,-50%);
+            }
+            div {
+                opacity: 0;
+                transform: translate(100%,0)
+            }
+        }
+    }
+
+    /* BOUTONS TEXT EXPAND */
+    &.text-expand {
+        padding: 0;
+        width: 160px;
+        text-align: center;
+        @include transition(0.6s);
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            letter-spacing: 1.3px;
+        }
+    }
+
+    /* BOUTONS BORDER-ANIMATED */
+    &.gradient-animated {
+        max-width: 162px;
+        width: 100%;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: $darkPrimaryColor;
+        svg {
+            border-radius: $border-radius-small;
+            height: 50px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            linearGradient {
+                stop {
+                    &:nth-child(1) {
+                        stop-color: $darkPrimaryColor;
+                    }
+                    &:nth-child(2) {
+                        stop-color: $primaryColor;
+                    }
+                }
+            }
+            rect {
+                fill: none;
+                stroke-width: 4;
+                stroke-dasharray: 422, 0;
+                transition: all 0.35s linear;
+            }
+        }
+        &:hover {
+            color: $darkPrimaryColor;
+            background-color: transparent;
+            rect {
+                stroke-dasharray: 47, 310;
+                stroke-dashoffset: 100;
+                transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+        }
+    }
+
+    /* BOUTONS CUT TEXT */
+    &.cut-text {
+        overflow: hidden;
+        .cut-text-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: -55%;
+                left: 0;
+                width: 101%;
+                height: 105%;
+                background-color: white;
+                transform-origin: bottom center;
+                transition: transform .5s cubic-bezier(.48,0,.12,1);
+                transform: skewY(9.3deg) scaleY(0);
+            }
+            .text-hover {
+                display: flex;
+                align-items: center;
+                color: $darkPrimaryColor;
+                position: absolute;
+                bottom: 0;
+                transition: all .4s cubic-bezier(.48,0,.12,1);
+                z-index: 10;
+                opacity: 0;
+                top: 50%;
+                transform: translateY(225%);
+            }
+        }
+        &:hover {
+            background-color: $darkPrimaryColor;
+            color: white;
+            .cut-text-content {
+                .text-hover {
+
+                    transform: translateY(-50%);
+                    opacity: 1;
+                    transition: all .8s cubic-bezier(.48,0,.12,1);
+                }
+                &:before {
+                    transform-origin: bottom center;
+                    transform: skewY(9.3deg) scaleY(2);
+                }
+            }
+        }
+        &.btn-arrow {
+            .text-hover {
+                svg {
+                    right: -30px;
+                    path {
+                        fill: $primaryColor;
+                    }
+                }
+            }
+        }
+        &.btn-icon {
+            &:hover {
+                svg {
+                    path {
+                        fill: white
+                    }
+                }
+                .text-hover {
+                    svg {
+                        path {
+                            fill: $darkPrimaryColor;
+                        }
+                    }
+                }
+            }
+        }
+        &.white {
+            .cut-text-content {
+                &:before {
+                    background-color: $darkPrimaryColor;
+                }
+                .text-hover {
+                    color: white;
+                }
+            }
+            &:hover {
+                background-color: white;
+                color: $darkPrimaryColor;
+                svg {
+                    path {
+                        fill: white
+                    }
+                }
+                .text-hover {
+                    svg {
+                        path {
+                            fill: $darkPrimaryColor;
+                        }
+                    }
+                }
+            }
+        }
+        &.btn-border {
+            .cut-text-content {
+                &:before {
+                    background-color: $darkPrimaryColor;
+                }
+                .text-hover {
+                    color: white;
+                    svg {
+                        path {
+                            fill: white
+                        }
+                    }
+                }
+            }
+            &:hover {
+                background-color: white;
+                color: $darkPrimaryColor;
+                svg {
+                    path {
+                        fill: $darkPrimaryColor
+                    }
+                }
+            }
+            &.white {
+                .cut-text-content {
+                    &:before {
+                        background-color: white;
+                    }
+                    .text-hover {
+                        color: $darkPrimaryColor;
+
+                        svg {
+                            path {
+                                fill: $darkPrimaryColor
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: transparent;
+                    color: white;
+                    svg {
+                        path {
+                            fill: white
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* BOUTONS APPEARANCE ARROW */
+    &.appearance-arrow {
+        padding: 0 30px !important;
+        transition: all 300ms ease 0ms;
+        svg {
+            opacity: 0;
+            position: absolute;
+            margin-left: -1em;
+            transition: all 300ms ease 0ms;
+            polyline, line {
+                stroke: $darkPrimaryColor !important;
+            }
+        }
+        &:hover {
+            border: 2px solid transparent;
+            padding: 0 50px 0 20px !important;
+            background-color: transparent;
+            color: $darkPrimaryColor;
+            transition: all 300ms ease 0ms;
+            svg {
+                opacity: 1;
+                margin-left: 0;
+                transition: none !important;
+            }
+        }
+    }
+}
+
+/////////////////////////
+// BOUTON - PLAN DE SITUATION
+/////////////////////////
+.btn-round-hover {
+    position: relative;
+    &:hover {
+        .btn-round {
+            &:before {
+                transform: scale(10);
+                border-radius: 0;
+            }
+        }
+    }
+    .btn-round {
+        z-index: 0;
+        position: absolute;
+        bottom: -18px;
+        right: -15px;
+        width: 100px;
+        height: 100px;
+        &:before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            border: none;
+            padding: 0;
+            border-radius: 100%;
+            width: 100px;
+            height: 100px;
+            @include transition(0.6s);
+
+            background: linear-gradient(to left, $primaryColor, $darkPrimaryColor, $primaryColor);
+            background-size: 200% 200%;
+            background-position: right;
+        }
+        button{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: rem(18px);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: white;
+            border: none;
+            background-color: transparent;
+        }
+    }
+}
+
+/////////////////////////
+// CALL TO ACTION
+/////////////////////////
+.cta {
+    z-index: 9999;
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 56px;
+    background: linear-gradient(to left, $primaryColor, $darkPrimaryColor);
+    transform-origin: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.24);
+
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+    div {
+        z-index: 13;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 60px;
+        height: 60px;
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        @include transition(all .3s ease);
+
+        &.open {
+            transform: scale(0);
+            visibility: hidden;
+            @include transition(all .3s ease);
+            svg {
+                linearGradient {
+                    stop {
+                        &:nth-child(1) {
+                            stop-color: $darkPrimaryColor;
+                        }
+                        &:nth-child(2) {
+                            stop-color: $primaryColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:before {
+        position: absolute;
+        left: -2px;
+        top: -2px;
+
+        content: "";
+        display: block;
+        width: 63px;
+        height: 63px;
+        transform: scale(0);
+        background-color: white;
+        border-radius: 50%;
+
+        transition: all .3s ease;
+    }
+
+    &:hover {
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.24);
+        &:before {
+            transform: scale(1);
+            transition: all .3s ease;
+        }
+        div {
+            transform: scale(1.5);
+            transition: all .3s ease;
+            &.open {
+                transform: scale(1);
+                visibility: visible;
+                transition: all .3s ease;
+            }
+        }
+    }
+}
+

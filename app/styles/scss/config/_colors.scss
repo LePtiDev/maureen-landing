@@ -1,0 +1,32 @@
+// Main colors
+$primaryColor: #3688ff;
+$darkPrimaryColor: #304bd8;
+$primaryColorLighter: #f3f8ff;
+$primaryColorLite: #d3e3fb;
+
+//$primaryColorLighter: transparentize($primaryColor, 0.95); // Conserver
+
+$secondaryColor: #00e2aa;
+//$secondaryColorLighter: #;
+
+$tertiaryColor: #343e5c;
+
+
+// Gray colors
+
+$darkGray1: #222328;
+$darkGray2: #727682;
+
+$lightGray1: #b9bfd3;
+$lightGray2: #e4e8f0;
+$lightGray3: #f0f2f7;
+
+
+$redLighter: #ffd2d2;
+
+
+// Validation forms
+$green: $secondaryColor; //success documentation
+$red: #dc3545; //error documentation
+$greenLighter: #4be36e; //success webcallback
+$redLighter: #f07373; //error webcallback

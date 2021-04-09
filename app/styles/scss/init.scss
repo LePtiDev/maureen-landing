@@ -1,0 +1,72 @@
+/////////////////////////
+// BOOTSTRAP
+/////////////////////////
+@import '_bootstrap';
+
+
+/////////////////////////
+// SETTINGS
+/////////////////////////
+@import 'config/_fonts';
+@import 'config/_colors';
+@import 'config/_variables';
+
+
+/////////////////////////
+// MIXINS
+/////////////////////////
+@import 'mixins/_mixins';
+@import 'mixins/_rem';
+
+
+/////////////////////////
+// ANIMATIONS
+/////////////////////////
+@import 'animations/_animations';
+@import 'animations/_aos';
+@import 'animations/_hover';
+
+
+/////////////////////////
+// LAYOUT ELEMENTS
+/////////////////////////
+
+// Global elements
+@import 'elements/_buttons';
+@import 'elements/_radio';
+@import 'elements/_checkbox';
+@import 'elements/_form';
+@import 'elements/_sticky_bar';
+@import 'elements/_cookies_light';
+@import 'elements/_popin';
+
+// Flexible elements
+@import 'elements/_overlay'; // XL - S
+@import 'elements/_headbar'; // XL - S
+@import 'elements/_aerations'; // XL
+@import 'elements/_tabs'; // XL
+@import 'elements/_accordion'; // XL
+@import 'elements/_slideshow'; // XL
+@import 'elements/_table'; // XL - Post-form
+@import 'elements/_iframe'; // Post-form
+
+// Optional
+@import 'elements/_menu_mobile'; // Hors gabarit Adscore
+
+/////////////////////////
+// CONTENT
+/////////////////////////
+@import 'general/_ie';
+@import 'general/_cleaners';
+@import 'general/_main';
+
+
+/////////////////////////
+// THEME
+/////////////////////////
+@import 'general/main';
+
+/////////////////////////
+// PLUGINS
+/////////////////////////
+@import 'plugins/rgpd';
