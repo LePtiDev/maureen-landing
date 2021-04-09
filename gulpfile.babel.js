@@ -14,7 +14,7 @@ import imagemin from 'gulp-imagemin';
 import os from 'os';
 
 // Adress local 'nom du dossier + app'
-let baseDirRepository = "/mustii-landii/app/";
+let baseDirRepository = "/maureen/app/";
 
 
 var routing;
