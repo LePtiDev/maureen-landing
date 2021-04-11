@@ -23,7 +23,6 @@
         <meta property="og:description" content="<?php echo $settings['meta']['description']; ?>" />
         <meta property="og:url" content="<?php echo SITE_URL; ?>" />
         <meta property="og:site_name" content="<?php echo $settings['meta']['site_name']; ?>" />
-        <meta property="og:image" content="<?php echo SITE_URL; ?><?php echo $settings['meta']['image']; ?>" />
         <!-- Twitter -->
         <meta name="twitter:description" value="<?php echo $settings['meta']['title']; ?>" />
         <meta name="twitter:url" value="<?php echo SITE_URL; ?>" />

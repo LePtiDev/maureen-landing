@@ -2,7 +2,7 @@
 define('SETTINGS', 'PRODUCTION');
 
 ///// GENERAL /////
-define('SITE_URL', ''); // Si landing Adscore : https://www.acheter-neuf.immo/PROMOTEUR/VILLE/RESIDENCE/
+define('SITE_URL', 'http://www.dev.mustii.fr/maureen-nicolas/'); // Si landing Adscore : https://www.acheter-neuf.immo/PROMOTEUR/VILLE/RESIDENCE/
 
 
 ///// FAVICON /////

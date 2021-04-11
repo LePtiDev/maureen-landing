@@ -2,7 +2,7 @@
 define('SETTINGS', 'PREPRODUCTION');
 
 ///// GENERAL /////
-define('SITE_URL', 'https://dev.adn-realty.com/adn/test-tracking/');
+define('SITE_URL', 'http://www.dev.mustii.fr//maureen-nicolas/');
 
 
 ///// FAVICON /////

@@ -2,13 +2,13 @@
 $settings = array();
 
 // DOMAINES REFERENCE
-$settings['domains']['preproduction'] = 'dev.adn-realty.com';
-$settings['domains']['production'] = ''; // Domaine final - Si landing Adscore : acheter-neuf.immo
+$settings['domains']['preproduction'] = 'dev.mustii.fr';
+$settings['domains']['production'] = 'dev.mustii.fr';
 
 
 // DONNEES LIEES AU PROGRAMME
 $settings['residenceInfos'] = array();
-$settings['residenceInfos']['name'] = "NOM_RESIDENCE";
+$settings['residenceInfos']['name'] = "Maureen Nicolas";
 $settings['residenceInfos']['city'] = "VILLE_RESIDENCE";
 $settings['residenceInfos']['dpt'] = "00";
 $settings['residenceInfos']['brochureFilename'] = $settings['residenceInfos']['city'] . "-" . $settings['residenceInfos']['name'] . ".pdf"; // Ex : Noisy-Tendance.pdf
@@ -24,12 +24,9 @@ $settings['texts']['maquette3d'] = "https://services.vor-immobilier.fr/RivageImm
 
 // META DATA
 $settings['meta'] = array();
-$settings['meta']['title'] = "Appartements neufs à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ") pour habiter ou investir"; // A optimiser pour le référencement - 55 caractères maximum
-$settings['meta']['description'] = "Du studio au 5 pièces, votre futur appartement neuf à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ") - Contactez-nous pour en savoir plus"; // A optimiser pour le référencement - 155 caractères maximum
-$settings['meta']['site_name'] = $settings['residenceInfos']['name'] . " - " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ")";
-$settings['meta']['image'] = "images/share.jpg"; // A créer
-
-
+$settings['meta']['title'] = "Maureen Nicolas"; // A optimiser pour le référencement - 55 caractères maximum
+$settings['meta']['description'] = "Maureen Nicolas - Portfolio"; // A optimiser pour le référencement - 155 caractères maximum
+$settings['meta']['site_name'] = "Maureen Nicolas";
 
 // E-MAILS
 $settings['email']['libelleProgramme'] = $settings['residenceInfos']['name'] . " à " . $settings['residenceInfos']['city'] . " (" . $settings['residenceInfos']['dpt'] . ")";

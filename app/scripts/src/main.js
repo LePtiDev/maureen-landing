@@ -1,43 +1,44 @@
 
 
 // Animation circle
-let blue = document.getElementById('blue-cicle')
-let red = document.getElementById('blue-red')
-let green = document.getElementById('blue-green')
+let blueCircle = document.getElementById('blue-circle')
+let redCircle = document.getElementById('blue-red')
+let greenCircle = document.getElementById('blue-green')
 
 document.addEventListener('mousemove', (event) => {
     let xPosition = event.clientX
     let yPosition = event.clientY
 
-    blue.style.right = xPosition * 0.3 + "px"
-    blue.style.top = yPosition * 0.2 + "px"
+    blueCircle.style.right = xPosition * 0.3 + "px"
+    blueCircle.style.top = yPosition * 0.2 + "px"
 
-    red.style.left = xPosition * 0.1 + "px"
-    red.style.top = yPosition * 0.3 + "px"
+    redCircle.style.left = xPosition * 0.1 + "px"
+    redCircle.style.top = yPosition * 0.3 + "px"
 
-    green.style.left = xPosition * 0.4 + "px"
-    green.style.top = yPosition * 0.5 + "px"
+    greenCircle.style.left = xPosition * 0.4 + "px"
+    greenCircle.style.top = yPosition * 0.5 + "px"
 })
-
 
 // Animation circle-arrow
 let circle = document.getElementById('circle-arrow');
 let arrow = document.getElementById('arrow-of-circle');
 
-circle.addEventListener("mousemove", (event) => {
+if (window.innerWidth > 600){
+    circle.addEventListener("mousemove", (event) => {
 
-    let xPosition = (event.clientX + window.pageXOffset) - circle.offsetTop
-    let yPosition = (event.clientY + window.pageYOffset) - circle.offsetLeft
+        let xPosition = (event.clientX + window.pageXOffset) - circle.offsetTop
+        let yPosition = (event.clientY + window.pageYOffset) - circle.offsetLeft
 
-    arrow.style.top = yPosition - 50 + "px"
-    arrow.style.left = xPosition - 40 + "px"
+        arrow.style.top = yPosition - 50 + "px"
+        arrow.style.left = xPosition - 40 + "px"
 
-})
+    })
 
-circle.addEventListener("mouseleave", () => {
-    arrow.style.top = (150 - 125) + "px"
-    arrow.style.left = (150 - 125)+ "px"
-})
+    circle.addEventListener("mouseleave", () => {
+        arrow.style.top = (150 - 125) + "px"
+        arrow.style.left = (150 - 125)+ "px"
+    })
+}
 
 
 // animation images
@@ -122,24 +123,56 @@ let projects = [
 
 const tabContainer = document.getElementById("container-tab")
 projects.forEach( (element) => {
-
     element.link.addEventListener('mousemove', (event) => {
-
         let xPosition = event.clientX
         let yPosition = event.clientY
-
         let heightContainer = tabContainer.offsetHeight / 2
 
         element.img.style.opacity = "1"
         element.img.style.transition = "0ms"
         element.img.style.top = (heightContainer * 0.5) - (yPosition * 0.09)  + "px"
         element.img.style.right = xPosition * 0.5 + "px"
-
     })
 
     element.link.addEventListener('mouseleave', () => {
         element.img.style.transition = "200ms"
         element.img.style.opacity = "0"
     })
+})
+
+
+
+// animation of light mod
+let nav = document.getElementById("nav")
+let body = document.getElementById("container-body")
+let footer = document.getElementById("footer")
+
+let switchMode = document.getElementById("switch-mode")
+let moon = document.getElementById("Trace")
+
+let mode = "light"
+
+switchMode.addEventListener("click", () => {
+    if(mode === "light"){
+        mode = "dark"
+
+        //switch button
+        switchMode.style.transform = "rotate(180deg)"
+        moon.style.fill = "white"
+
+        nav.style.backgroundColor = "rgba(0, 0, 0, 0.49)"
+        body.style.backgroundColor = "rgba(0, 0, 0, 0.49)"
+        footer.style.backgroundColor = "rgba(0, 0, 0, 0.00)"
+    }
+    else{
+        mode = "light"
+
+        switchMode.style.transform = "rotate(0deg)"
+        moon.style.fill = "transparent"
+
+        nav.style.backgroundColor = "rgba(0, 0, 0, 0.00)"
+        body.style.backgroundColor = "rgba(0, 0, 0, 0.00)"
+        footer.style.backgroundColor = "rgba(0, 0, 0, 0.49)"
+    }
 
 })

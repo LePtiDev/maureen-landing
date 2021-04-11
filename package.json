@@ -2,17 +2,7 @@
   "name": "maureen-landing",
   "description": "Maureen landing",
   "dependencies": {
-    "@cmyee/pushy": "^1.3.0",
-    "@fancyapps/fancybox": "^3.5.7",
-    "aos": "^2.3.4",
-    "bootstrap": "^4.5.2",
-    "jarallax": "^1.12.2",
-    "jquery": "^3.5.1",
-    "jquery-lazy": "^1.7.11",
-    "jquery-nice-select": "^1.1.0",
-    "jquery-validation": "^1.19.2",
-    "normalize.css": "^8.0.1",
-    "swiper": "^6.1.3"
+    "aos": "^2.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.11.5",
