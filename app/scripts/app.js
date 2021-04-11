@@ -139,9 +139,50 @@ let projects = [
     {
         link: document.getElementById("sade"),
         img: document.getElementById("img-sade")
+    },
+    {
+        link: document.getElementById("discofont"),
+        img: document.getElementById("img-discofont")
+    },
+    {
+        link: document.getElementById("pirate"),
+        img: document.getElementById("img-pirate")
+    },
+    {
+        link: document.getElementById("shade"),
+        img: document.getElementById("img-shade")
+    },
+    {
+        link: document.getElementById("cartier"),
+        img: document.getElementById("img-cartier")
+    },
+    {
+        link: document.getElementById("personnal"),
+        img: document.getElementById("img-personnal")
+    },
+    {
+        link: document.getElementById("nyx"),
+        img: document.getElementById("img-nyx")
+    },
+    {
+        link: document.getElementById("amours"),
+        img: document.getElementById("img-amours")
+    },
+    {
+        link: document.getElementById("webdesign"),
+        img: document.getElementById("img-webdesign")
+    },
+    {
+        link: document.getElementById("illu"),
+        img: document.getElementById("img-illu")
+    },
+    {
+        link: document.getElementById("photo"),
+        img: document.getElementById("img-photo")
     }
 ]
 
+const tabContainer = document.getElementById("container-tab")
 projects.forEach( (element) => {
 
     element.link.addEventListener('mousemove', (event) => {
@@ -149,9 +190,11 @@ projects.forEach( (element) => {
         let xPosition = event.clientX
         let yPosition = event.clientY
 
+        let heightContainer = tabContainer.offsetHeight / 2
+
         element.img.style.opacity = "1"
         element.img.style.transition = "0ms"
-        element.img.style.top = yPosition * 0.5 + "px"
+        element.img.style.top = (heightContainer * 0.5) - (yPosition * 0.09)  + "px"
         element.img.style.right = xPosition * 0.5 + "px"
 
     })

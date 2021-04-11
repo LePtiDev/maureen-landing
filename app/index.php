@@ -54,7 +54,7 @@ require_once 'includes/autoloader.php';
                     <p>WORKS</p>
                 </div>
 
-                <div class="container-tab">
+                <div id="container-tab" class="container-tab">
                     <div class="header-tab">
                         <div class="plus"></div>
                         <div class="project">PROJECTS</div>
@@ -106,52 +106,52 @@ require_once 'includes/autoloader.php';
                         <div class="project">SADE</div>
                         <div class="domain">TYPEFACE</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="discofont" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">DISCOFONT</div>
                         <div class="domain">TYPEFACE</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="pirate" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">PIRATE</div>
                         <div class="domain">TYPEFACE</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="shade" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">SHADE</div>
                         <div class="domain">PRINT</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="cartier" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">CARTIER</div>
                         <div class="domain">PRINT</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="personnal" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">PERSONAL WORK</div>
                         <div class="domain">PRINT</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="nyx" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">NYX</div>
                         <div class="domain">VIDEO / CLIP</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="amours" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">AMOURS  D’ÉTÉ</div>
                         <div class="domain">VIDEO / CLIP</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="webdesign" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">MY CENSUS</div>
                         <div class="domain">WEBDESIGN</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="photo" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">UNTITLED</div>
                         <div class="domain">PHOTOGRAPHY</div>
                     </a>
-                    <a href="#" class="line">
+                    <a id="illu" href="#" class="line">
                         <div class="plus"><img src="images/icons/WHITE_PLUS.svg" alt=""></div>
                         <div class="project">UNTITLED</div>
                         <div class="domain">ILLUSTRATION</div>
@@ -170,12 +170,20 @@ require_once 'includes/autoloader.php';
                     <img id="img-toinztype" class="img-project" src="./images/accueil/toinztype.png" alt="VLN project">
                     <img id="img-organik" class="img-project" src="./images/accueil/organik.png" alt="VLN project">
                     <img id="img-sade" class="img-project" src="./images/accueil/sade.png" alt="VLN project">
+                    <img id="img-discofont" class="img-project" src="./images/accueil/discofont.png" alt="VLN project">
+                    <img id="img-pirate" class="img-project" src="./images/accueil/pirate.png" alt="VLN project">
+                    <img id="img-shade" class="img-project" src="./images/accueil/shade.png" alt="VLN project">
+                    <img id="img-cartier" class="img-project" src="./images/accueil/cartier.png" alt="VLN project">
+                    <img id="img-personnal" class="img-project" src="./images/accueil/personnal.png" alt="VLN project">
+                    <img id="img-nyx" class="img-project" src="./images/accueil/nyx.png" alt="VLN project">
+                    <img id="img-amours" class="img-project" src="./images/accueil/amours.png" alt="VLN project">
+                    <img id="img-webdesign" class="img-project" src="./images/accueil/webdesign.png" alt="VLN project">
+                    <img id="img-illu" class="img-project" src="./images/accueil/illu.png" alt="VLN project">
+                    <img id="img-photo" class="img-project" src="./images/accueil/photo.png" alt="VLN project">
                 </div>
 
             </section>
+            <?php include 'footer.php'; ?>
         </div>
-
-        <?php include 'footer.php'; ?>
-
     </body>
 </html>
